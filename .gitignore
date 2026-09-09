@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Production and test builds
+build/
+dist/
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency-manager caches
+.npm/
+.yarn/
+.pnpm-store/
+
+# Environment files (local secrets/configuration)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
