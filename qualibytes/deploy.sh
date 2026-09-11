@@ -1,5 +1,4 @@
-deploy.sh
-# !/bin/bash
+#!/bin/bash
 #=================================================================================
 #script name    : deploy.sh
 #description    : clones the react app from github, buildit, 
@@ -26,7 +25,7 @@ error() { echo -e "${RED}[ERROR]${RESET} $1"; }
 # -- Read the github repo URLfrom the first arguments ($1) --
 GITHUB_REPO_URL="$1"
 
-if [ -z "$GITHUB_REPO" ]; then
+if [ -z "$GITHUB_REPO_URL" ]; then
     error " Github repo missing. usage: bash deploy.sh <GITHUB_REPO_URL>"
 fi
 
@@ -40,7 +39,7 @@ echo ""
 echo "=============================================================="
 echo "qualibytes it academy - deployment script"
 echo "=============================================================="
-echo "Repo: $GITHUB_REPO"
+echo "Repo: $GITHUB_REPO_URL"
 echo ""
 
 # -- step 1: Get the latest code from Github --
@@ -68,10 +67,10 @@ success "react app built for production."
 
 # -- step 4: copy the build output to the nginx web route --
 info "step 4: copying build to web root..."
-sudo rm -rf "$WEB_DIR/*"
-sudo cp -r "$APP_DIR/build"/* "$WEB_DIR/"
-sudo chown -R www-data:www-data "$WEB_DIR"
-success " build deployed to $WEB_DIR."
+sudo rm -rf "$web_route/*"
+sudo cp -r "$APP_DIR/build"/* "$web_route/"
+sudo chown -R www-data:www-data "$web_route"
+success " build deployed to $web_route."
 
 # -- step 5: reload nginx to serve the new files --
 info "step 5: reloading nginx..."
@@ -82,5 +81,4 @@ echo ""
 echo "=============================================================="
 echo "Deployment completed successfully!"
 echo "you can now access the app via the server's public IP or domain name."
-echo "=============================================================="   
-
+echo "=============================================================="
