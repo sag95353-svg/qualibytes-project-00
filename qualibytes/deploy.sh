@@ -67,10 +67,10 @@ success "react app built for production."
 
 # -- step 4: copy the build output to the nginx web route --
 info "step 4: copying build to web root..."
-sudo rm -rf "$web_route/*"
-sudo cp -r "$APP_DIR/build"/* "$web_route/"
-sudo chown -R www-data:www-data "$web_route"
-success " build deployed to $web_route."
+sudo rm -rf "$WEB_DIR/*"
+sudo cp -r "$APP_DIR/build"/* "$WEB_DIR/"
+sudo chown -R www-data:www-data "$WEB_DIR"
+success " build deployed to $WEB_DIR."
 
 # -- step 5: reload nginx to serve the new files --
 info "step 5: reloading nginx..."
