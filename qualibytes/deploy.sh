@@ -57,7 +57,7 @@ success "latest code fetched from Github."
  # -- step 2: Install Node.js dependencies --
 info "step 2: installing npm packages..."
 cd "$APP_DIR"
-npm install --silent
+npm install
 success "npm packages installed."
 
 # -- step 3: build thr react app for production --
