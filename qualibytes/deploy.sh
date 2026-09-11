@@ -19,9 +19,9 @@ RED='\033[0;31m'
 RESET='\033[0m'
 
 # --Helper funtions --
-info() {echo -e "${CYAN}[INFO]${RESET} $1";}
-success() {echo -e "${GREEN}[SUCCESS]${RESET} $1";}
-error() {echo -e "${RED}[ERROR]${RESET} $1";}   
+info() { echo -e "${CYAN}[INFO]${RESET} $1";}
+success() { echo -e "${GREEN}[SUCCESS]${RESET} $1";}
+error() { echo -e "${RED}[ERROR]${RESET} $1";}   
 
 # -- Read the github repo URLfrom the first arguments ($1) --
 GITHUB_REPO_URL="$1"
