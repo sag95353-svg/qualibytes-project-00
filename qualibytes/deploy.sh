@@ -26,7 +26,7 @@ error() { echo -e "${RED}[ERROR]${RESET} $1"; }
 # -- Read the github repo URLfrom the first arguments ($1) --
 GITHUB_REPO_URL="$1"
 
-IF [ -z "$GITHUB_REPO" ]; then
+if [ -z "$GITHUB_REPO" ]; then
     error " Github repo missing. usage: bash deploy.sh <GITHUB_REPO_URL>"
 fi
 
